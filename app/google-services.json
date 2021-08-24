@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912329219167",
+    "project_id": "trello-clone-ed76a",
+    "storage_bucket": "trello-clone-ed76a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912329219167:android:c8a045cf1f9b7425e14fea",
+        "android_client_info": {
+          "package_name": "com.phantomlabs.firequiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912329219167-oc2fmdq83m91hpah88iiem3ttfejfpa3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLdfVsx13foxCT1CRrmCGMYM-Q4t1qOD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912329219167-oc2fmdq83m91hpah88iiem3ttfejfpa3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
