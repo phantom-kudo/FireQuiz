@@ -1,6 +1,5 @@
 package com.phantomlabs.firequiz.Activity.activities
 
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +18,7 @@ class QuestionActivity : AppCompatActivity() {
     lateinit var optionRecyclerView: RecyclerView
     lateinit var descriptiontxt: TextView
     var quizzes : MutableList<Quiz> ?= null
-    var questions : MutableMap<String,Questions> ?= null
+    var question : MutableMap<String,Questions> ?= null
     lateinit var btnPrev : Button
     lateinit var btnNext : Button
     lateinit var btnSubmit : Button
@@ -43,8 +42,9 @@ class QuestionActivity : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener {
                     if (it != null && !it.isEmpty) {
+                        Log.d("DATA",it.toObjects(Quiz::class.java).toString())
                         quizzes = it.toObjects(Quiz::class.java)
-                        questions = quizzes!![0].questions
+                        question = quizzes!![0].question
                         bindViews()
                     }
                 }
@@ -59,7 +59,7 @@ class QuestionActivity : AppCompatActivity() {
 
         if(index == 1) { //first quiz item
             btnNext.visibility = View.VISIBLE
-        } else if(index == questions!!.size) { // last quiz item
+        } else if(index == question!!.size) { // last quiz item
             btnPrev.visibility = View.VISIBLE
             btnSubmit.visibility = View.VISIBLE
         } else { // middle quiz item
@@ -67,7 +67,7 @@ class QuestionActivity : AppCompatActivity() {
             btnNext.visibility = View.VISIBLE
         }
 
-        val questions = questions!!["questions$index"]
+        val questions = question!!["question$index"]
         questions?.let {
             descriptiontxt.text = it.description
             val optionAdapter = OptionAdapter(this, it)

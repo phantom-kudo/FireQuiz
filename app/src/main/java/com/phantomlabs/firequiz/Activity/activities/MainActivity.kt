@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnDatePicker : FloatingActionButton
     private var quizlist = mutableListOf<Quiz>()
     lateinit var quizRecyclerView: RecyclerView
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun setUpViews() {
         setUpFirestore()
         setUpDrawerLayout()
@@ -50,17 +52,16 @@ class MainActivity : AppCompatActivity() {
         setUpDatePicker()
     }
 
+    @SuppressLint("SimpleDateFormat")
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun setUpDatePicker() {
         btnDatePicker.setOnClickListener {
             val datePicker = MaterialDatePicker.Builder.datePicker().build()
             datePicker.show(supportFragmentManager, "DatePicker")
             datePicker.addOnPositiveButtonClickListener {
                 Log.d("DATEPICKER",datePicker.headerText)
-                val dateFormatter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    SimpleDateFormat("dd-mm-yyyy")
-                } else {
-                    TODO("VERSION.SDK_INT < N")
-                }
+                val dateFormatter = SimpleDateFormat("dd-mm-yyyy")
+
                 val date = dateFormatter.format(Date(it))
                 val intent = Intent(this,QuestionActivity::class.java)
                 intent.putExtra("DATE",date)
