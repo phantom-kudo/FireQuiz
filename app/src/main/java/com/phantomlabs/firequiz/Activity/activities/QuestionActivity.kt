@@ -49,7 +49,6 @@ class QuestionActivity : AppCompatActivity() {
                     }
                 }
         }
-
     }
 
     private fun bindViews() {
@@ -62,6 +61,9 @@ class QuestionActivity : AppCompatActivity() {
         } else if(index == question!!.size) { // last quiz item
             btnPrev.visibility = View.VISIBLE
             btnSubmit.visibility = View.VISIBLE
+
+
+
         } else { // middle quiz item
             btnPrev.visibility = View.VISIBLE
             btnNext.visibility = View.VISIBLE

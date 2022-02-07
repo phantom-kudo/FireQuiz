@@ -1,6 +1,7 @@
 package com.phantomlabs.firequiz.Activity.activities
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -38,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun login() {
         val email : String = signinemail.text.toString()

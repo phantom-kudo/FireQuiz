@@ -12,17 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FireQuiz">
         <activity
+            android:name=".Activity.activities.ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.activities.ResultActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.activities.QuestionActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.activities.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.NoFireQuiz"></activity>
+            android:theme="@style/Theme.NoFireQuiz" />
         <activity
             android:name=".Activity.activities.SignupActivity"
             android:exported="true"
-            android:theme="@style/Theme.NoFireQuiz"></activity>
+            android:theme="@style/Theme.NoFireQuiz" />
         <activity
             android:name=".Activity.activities.IntroActivity"
             android:exported="true"
@@ -32,14 +37,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Activity.activities.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.NoFireQuiz">
-
-        </activity>
+            android:theme="@style/Theme.NoFireQuiz" />
     </application>
 
 </manifest>
